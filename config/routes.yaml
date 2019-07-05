@@ -2,5 +2,5 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 app_a_b:
-  path: /a/b
-  controller: App\Controller\TestController::test
+  path: /
+  controller: App\Controller\IndexController::test

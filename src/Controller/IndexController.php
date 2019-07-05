@@ -1,15 +1,17 @@
-<?php 
+<?php
 // src/Controller/TestController.php
 
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class TestController
+class IndexController
 {
+
 	public function test()
 	{
-		$number = random_int(0,50);
+
+		$number = random_int(0,99);
 
 		return new Response(
 			'<html>
