@@ -14,6 +14,9 @@ class LoginController
 	public function login()
 	{
 		$login_form = "tHIS will Be A FOrm";
+		$username = "username";
+		$email = "email";
+		
 		return new Response($login_form);
 	}
 }
