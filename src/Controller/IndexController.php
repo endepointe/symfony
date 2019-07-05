@@ -5,11 +5,12 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class IndexController
+class IndexController extends AbstractController
 {
 	/**
-   * @Route("/")
+    * @Route("/")
 	*/
 
 	public function loadIndex()
@@ -17,21 +18,7 @@ class IndexController
 
 		$greeting = '<h1>Welcome to the landing page</h1>';
 
-		return new Response(
-			'<html>
-				<body>
-					'.$greeting.'
-				</body>
-			</html>');
-	}
-
-	/**
-		* @Route("/login")
-	*/
-	public function  login()
-	{
-		$login_form = "tHIS will Be A FOrm";
-		return new Response($login_form);
+		return new Response($greeting);
 	}
 }
 ?>
