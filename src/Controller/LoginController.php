@@ -14,10 +14,10 @@ class LoginController
 	public function login()
 	{
 		$login_form = "tHIS will Be A FOrm";
-		$username = "username";
+		$username = "test user name name";
 		$email = "email";
 		
-		return new Response($login_formd);
+		return new Response($login_form." ".$username." ".$email);
 	}
 }
 ?>
