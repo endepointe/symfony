@@ -17,7 +17,7 @@ class LoginController
 		$username = "username";
 		$email = "email";
 		
-		return new Response($login_form);
+		return new Response($login_formd);
 	}
 }
 ?>

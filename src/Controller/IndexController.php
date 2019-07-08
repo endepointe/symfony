@@ -10,7 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class IndexController extends AbstractController
 {
 	/**
-    * @Route("/")
+    * @Route("/", name="index", requirements={"page"="\d+"})
 	*/
 
 	public function loadIndex()
