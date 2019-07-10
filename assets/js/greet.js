@@ -1,3 +1,3 @@
-module.exports = (name) => {
+export default function(name) {
 	return `Hello ${name}, welcome.`;
 };
