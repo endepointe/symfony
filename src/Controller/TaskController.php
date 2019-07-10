@@ -7,8 +7,9 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Componeny\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
+use App\Form\TaskType;
 
-clase TaskController extends AbstractController
+class TaskController extends AbstractController
 {
 	public function new(Request $request)
 	{
@@ -18,6 +19,15 @@ clase TaskController extends AbstractController
 			->add('save', SubmitType::class, ['label' => 'Create Task'])
 			->getForm();
 
+		$form->handleRequest($request);
+
+		if ($form->isSubmitted() && $form->isValid())
+		{
+			$task = $form->getData();
+			// now perform an action
+			return $this->redirectToRoute('task_success');
+		}
+		
 		return $this->render('task/new.html.twig', [
 			'form' => $form->createView(),
 		]);
