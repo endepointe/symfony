@@ -1,10 +1,11 @@
-<?php 
+<?php
 // src/Entity/Task.php
 
 namespace App\Entity;
+
 use Symfony\Component\Validator\Constraints as Assert;
 
-class Task 
+class Task
 {
 	/**
 		* @Assert\NotBlank
@@ -31,11 +32,11 @@ class Task
 	{
 		return $this->dueDate;
 	}
-		
+
 	public function setDueDate(\DateTime $dueDate = null)
 	{
 		$this->dueDate = $dueDate;
-	}		
+	}
 }
 
  ?>

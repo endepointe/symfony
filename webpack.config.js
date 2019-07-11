@@ -24,6 +24,7 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/js/app.js')
+    .addEntry('dashboard', './assets/js/dashboard.js')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 
@@ -54,7 +55,7 @@ Encore
     })
 
     // enables Sass/SCSS support
-    //.enableSassLoader()
+    .enableSassLoader()
 
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
@@ -67,8 +68,15 @@ Encore
     //.autoProvidejQuery()
 
     // uncomment if you use API Platform Admin (composer req api-admin)
-    //.enableReactPreset()
+    .enableReactPreset()
     //.addEntry('admin', './assets/js/admin.js')
-;
+
+    .configureBabel(function (babelConfig) {
+        babbelConfig.plugins = [
+            "@babel/plugin-proposal-object-rest-spread",
+            "@babel/plugin-proposal-class-properties",
+            "@babel/plugin-transform-runtime"
+        ]
+    });
 
 module.exports = Encore.getWebpackConfig();
