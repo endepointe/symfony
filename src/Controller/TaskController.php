@@ -6,12 +6,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Componeny\Form\Extension\Core\Type\TextType;
-use Symfony\Component\HttpFoundation\Request;
 use App\Form\TaskType;
 
 class TaskController extends AbstractController
 {
-	public function new(Request $request)
+	public function new()
 	{
 		$task = $this->createFormBuilder($task)
 			->add('task', TextType::class)
@@ -19,7 +18,7 @@ class TaskController extends AbstractController
 			->add('save', SubmitType::class, ['label' => 'Create Task'])
 			->getForm();
 
-		$form->handleRequest($request);
+		$form = $this->createForm(TaskType::class, $task);
 
 		if ($form->isSubmitted() && $form->isValid())
 		{
