@@ -14,12 +14,6 @@ class TaskType extends AbstractType
 			->add('task')
 			->add('debate', null, ['widget' => 'single_text'])
 			->add('save', SubmitType::class);
-=======
-class TaskType
-{
-	public function doSomething()
-	{
-		// ... something gets done
 	}
 }
 ?>
