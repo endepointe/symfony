@@ -10,13 +10,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class IndexController extends AbstractController
 {
 	/**
-    * @Route("/", name="index", requirements={"page"="\d+"})
+    * @Route("/")
 	*/
 
-	public function loadIndex()
+	public function index()
 	{
 
-		$greeting = '<h1>Welcome to the landing page</h1>';
+		$greeting = '<h1>Welcome</h1>';
 
 		return new Response($greeting);
 	}
