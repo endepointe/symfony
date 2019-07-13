@@ -23,8 +23,8 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
-    .addEntry('app', './assets/js/app.js')
-    .addEntry('dashboard', './assets/js/dashboard.js')
+    .addEntry('app', ['babel-polyfill', './assets/js/app.js'])
+    
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 
@@ -72,7 +72,7 @@ Encore
     //.addEntry('admin', './assets/js/admin.js')
 
     .configureBabel(function (babelConfig) {
-        babbelConfig.plugins = [
+        babelConfig.plugins = [
             "@babel/plugin-proposal-object-rest-spread",
             "@babel/plugin-proposal-class-properties",
             "@babel/plugin-transform-runtime"

@@ -6,15 +6,21 @@
  */
 
 // any CSS you require will output into a single css file (app.css in this case)
-import '../css/app.scss';
-
-import greet from './greet';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 // const $ = require('jquery');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import '../css/app.scss';
 
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+class App extends React.Component {
+    render() {
+        return (
+            <div>
+                <p>Hello</p>
+            </div>
+        )
+    }
+}
 
-(window.onload = () => {
-	console.log(greet("EndPnt"));
-});
+ReactDOM.render(<App/>, document.getElementById('root'));
