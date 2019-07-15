@@ -1,37 +1,18 @@
-{# templates/base.html.twig #}
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Test Application{% endblock %}</title>
-        {% block stylesheets %}
-            {# 'app' must match the first argument to addEntry() in webpack.config.js #}
-            {{ encore_entry_link_tags('app') }}
-            <!-- Renders a link tag (if your module requires any CSS)
-                <link rel="stylesheet" href="/build/app.css"> -->
-        {% endblock %}
-    </head>
-
-    <body>
-        <div id="sidebar">
-            {% block sidebar %}
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                </ul>
-            {% endblock %}
-        </div>
-
-        <div id="content">
-            {% block body %}{% endblock %}
-        </div>
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-
-            <!-- Renders app.js & a webpack runtime.js file
-                <script src="/build/runtime.js"></script>
-                <script src="/build/app.js"></script> -->
-        {% endblock %}
-    </body>
-</html>
+ <html>
+     <head>
+         <meta charset="UTF-8">
+         <title>{% block title %}Welcome!{% endblock %}</title>
+         {% block stylesheets %}{% endblock %}
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+     </head>
+     <body>
+         {% block body %}{% endblock %}
+         {% block javascripts %}
+         
+         <!-- Include the compiled script-->
+             <script type="text/javascript" src="{{ asset('build/js/app.js') }}"></script>
+             
+         {% endblock %}
+     </body>
+ </html>
