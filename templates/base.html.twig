@@ -2,19 +2,29 @@
  <html>
 
      <head>
-         <meta charset="UTF-8">
-         <title>{% block title %}Welcome!{% endblock %}</title>
-         {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-         {% endblock %}
-         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-     </head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        
+        {% block stylesheets %}
+          {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    </head>
 
-     <body>
-         {% block body %}{% endblock %}
-         {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-         {% endblock %}
-     </body>
+    <body>
+        {% block body %}
+            <div id="root"></div>
+        {% endblock %}
+
+        {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+
+        <!-- Renders app.js & webpack runtime.js file
+            <script src="/build/rutime.js"></script> 
+            <script src="/build/app.js"></script> -->
+         
+        {% endblock %}
+    </body>
 
  </html>
