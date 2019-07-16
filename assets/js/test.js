@@ -7,5 +7,5 @@ const start = () => {
 
 export default function(input) {
     let msg = start();
-    return `${msg}.\nOutput: ${input}`
+    return `${msg}.\nOutput: ${input}`;
 }
