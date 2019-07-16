@@ -1,9 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+// assets/js/app.js
 
-class App extends TextTrackList.Component 
-{
-    render (
-        <div>hello</div>)
-}
-ReactDOM.render(<App/>, document.getElementById('root'));
+import React from 'react';
+import Test from './test';
+
+(() => {
+    console.log(Test(`Test from app.js\nReact Object:`), React);
+})();
