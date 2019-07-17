@@ -5,6 +5,23 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Test from "./test";
 
+// Given these two components,
+// create a Greeting component
+// that displays a greeting based
+// on a bool condition.
+
+function Greeting(props) {
+  return <h1>Hi, I am glad you were able to make it.</h1>;
+}
+
+function GuestGreeting(props) {
+  return <h1>Hi, we need to valid you before you are allowed to enter.</h1>
+}
+
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+}
+
 class App extends React.Component {
   render() {
     return (
@@ -55,7 +72,7 @@ class Clock extends React.Component {
 class Toggle extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {isToggleOn: true };
+    this.state = { isToggleOn: true };
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
@@ -64,13 +81,14 @@ class Toggle extends React.Component {
     }));
   }
   render() {
-    return(
+    return (
       <button onClick={this.handleClick}>
-        {this.state.isToggleOn ? 'ON' : 'OFF' }
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
       </button>
     );
   }
 }
+
 
 (() => {
   ReactDOM.render(<Toggle />, document.getElementById("root"))
