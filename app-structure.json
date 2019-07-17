@@ -1,3 +1,9 @@
 {
-    "resume": "https://reactjs.org/docs/conditional-rendering.html"
+    "resume": {
+        "pages":
+        [
+            "https://reactjs.org/docs/conditional-rendering.html#inline-if-else-with-conditional-operator",
+            "https://symfony.com/doc/current/doctrine.html#fetching-objects-from-the-database"
+        ]
+    }
 }
