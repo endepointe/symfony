@@ -1,4 +1,5 @@
 <?php
+// src/Controller/ProductController.php
 
 namespace App\Controller;
 
@@ -32,5 +33,19 @@ class ProductController extends AbstractController
         $entityManager->flush();
         
         return new Response('Saved a new product with ID: '.$product->getId());
+    }
+
+    public function show($id) 
+    {
+        $product = $this->getDoctrine()
+            ->getRepository(Product::class)
+            ->find($id);
+        
+        if (!$product) {
+            throw $this->createNotFoundException(
+                `No product found for id: ${id}`
+            );
+        }
+        return new Response("Product:". $product->getName());
     }
 }

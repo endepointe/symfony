@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello UserController!{% endblock %}
+{% block title %} {{ controller_name }} {% endblock %}
 
 {% block body %}
 <style>
@@ -9,13 +9,13 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-    <h2>User:</h2>
+    
     <ul>
         <li>{{ first_name }}</li>
         <li>{{ last_name }}</li>
         <li>{{ email }}</li>
         <li>{{ nick_name }}</li>
+    </ul>
 
     This friendly message is coming from:
     <ul>
