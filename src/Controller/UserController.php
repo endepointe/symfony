@@ -29,11 +29,8 @@ class UserController extends AbstractController
         $errors = $validator->validate($user);
         if (count($errors) > 0) { 
            return new Response( 
-               (string) $errors, 
-               417, 
-               [
-                   'content-type' => 'application/json' 
-                ]
+               (string) $errors, 400);
+              
             );
         }
 
@@ -50,8 +47,10 @@ class UserController extends AbstractController
     //         'email' => $user->getEmail(),
     //         'nick_name' => $user->getNickname(),
     //     ]
+        // instead of sending as text, serialize the 
+        // content-type and send as an app/json file
 
-        $res = new Response($user);
+        $res = new Response($user, Response::HTTP_OK, ['content-type' => 'text/html']);
 
         return $this->render('user/index.html.twig', $res);
     }
