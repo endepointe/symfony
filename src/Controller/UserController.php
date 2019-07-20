@@ -30,8 +30,6 @@ class UserController extends AbstractController
         if (count($errors) > 0) { 
            return new Response( 
                (string) $errors, 400);
-              
-            );
         }
 
         // mounts to Doctrine
@@ -50,8 +48,8 @@ class UserController extends AbstractController
         // instead of sending as text, serialize the 
         // content-type and send as an app/json file
 
-        $res = new Response($user, Response::HTTP_OK, ['content-type' => 'text/html']);
+        //$res = new Response($user, Response::HTTP_OK, ['content-type' => 'text/html']);
 
-        return $this->render('user/index.html.twig', $res);
+        return new Response(`Created user:`);
     }
 }
