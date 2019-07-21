@@ -9,6 +9,9 @@ use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 class UserController extends AbstractController
 {
@@ -25,6 +28,10 @@ class UserController extends AbstractController
         $user->setEmail('a@gmail.com');
         $user->setNickname('A');
         $user->setPass('123456');
+
+        $encoders = [new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializers = new Serializer($normailzers, $encoders);
 
         $errors = $validator->validate($user);
         if (count($errors) > 0) { 
@@ -50,6 +57,6 @@ class UserController extends AbstractController
 
         //$res = new Response($user, Response::HTTP_OK, ['content-type' => 'text/html']);
 
-        return new Response(`Created user:`);
+        return new Response("Created user:"." ".$user);
     }
 }
